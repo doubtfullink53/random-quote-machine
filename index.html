@@ -1,0 +1,50 @@
+<html>
+  <head>
+    
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script>
+      window.onload = init;
+      function init() {
+        $(document).ready(function () {
+          $.getJSON(
+            "https://free-quotes-api.herokuapp.com/",
+            function (randomQuote) {
+              let quote = document.getElementById("text");
+              let author = document.getElementById("author");
+
+              quote.innerHTML = "&quot;" + randomQuote.quote + "&quot;";
+              author.textContent = randomQuote.author;
+
+              $('#tweet-quote').attr(
+                'href',
+                'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +  
+                 encodeURIComponent( quote.innerHTML  + author.innerHTML )
+                );
+            }
+          );
+        });
+      }
+    </script>
+
+    <title>Random Quotes Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <wrapper id="quote-box">
+      <div id="text"></div>
+      <div id="author"></div>
+      <button id="new-quote" onclick="newQuote()">New Quote</button>
+      <a class="button"   id="tweet-quote" title="Tweet this quote!" target="_top"><i class="fa fa-twitter" id="twitter-icon" aria-hidden="true"></i></a>
+
+      <!-- https://twitter.com/intent/tweet? -->
+      <!-- <a class="button" id="tweet-quote" title="Tweet this quote!" target="_top" href="https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=%22The%20best%20time%20to%20plant%20a%20tree%20was%2020%20years%20ago.%20The%20second%20best%20time%20is%20now.%22%20Chinese%20Proverb" style="background-color: rgb(251, 105, 100);">
+        <i class="fa fa-twitter"></i>
+      </a> -->
+      
+    </wrapper>
+  </body>
+</html>

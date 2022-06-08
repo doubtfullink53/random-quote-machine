@@ -1,0 +1,57 @@
+body{
+ background-color: rgb(12, 95, 167);
+ font-weight: 900;
+ font-family: 'Courier New', Courier, monospace;
+ 
+}
+
+
+#quote-box{
+position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 40px 50px;
+  background-color: white;
+  display: table;
+  border-radius: 20px;
+}
+#text{
+    font-size: 40px;
+}
+#author{
+    font-size: 20px;
+    text-align: right;
+}
+
+button {
+    display: inline-block;
+    background-color: rgb(27, 134, 228);
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  #twitter-icon{
+    font-size:28px;
+    color: rgb(27, 134, 228);
+    
+    display: inline-block;
+    background-color: rgb(27, 134, 228);
+    border-radius: 10px;
+    color: #eeeeee;
+    text-align: center;
+    padding: 8px;
+    /* width: 200px; */
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
