@@ -1,12 +1,12 @@
 
 function newQuote(){
 $(document).ready(function(){
-    $.getJSON("https://free-quotes-api.herokuapp.com/", function(randomQuote){
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?", function(randomQuote){
         // document.write(randomQuote.quote)
         let quote = document.getElementById("text")
         let author = document.getElementById("author")
-        quote.innerHTML = "&quot;" + (randomQuote.quote) + "&quot;"
-        author.textContent = (randomQuote.author)
+        quote.innerHTML = "&quot;" + (randomQuote.quoteText) + "&quot;"
+        author.textContent = (randomQuote.quoteAuthor)
 
         $('#tweet-quote').attr(
             'href',
